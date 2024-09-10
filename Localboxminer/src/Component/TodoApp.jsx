@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 let taskIdCounter = 0;
 
-function FinalTodolist() {
-  const [currentTask, setCurrentTask] = useState("");
+function TodoApp() {
+  const [currentTask, setCurrentTask] = useState(""); // input value
 
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(JSON.parse(localStorage.getItem("Tasks")) || []  );  //localStorage get
+//   const [taskList, setTaskList] = useState( []  );  //add
   
-  const [taskid, setTaskid] = useState(null);
+  const [taskid, setTaskid] = useState(null); // edit task
 
 
   
-  //   USED TO ADD
+  //   localStorage set
+  useEffect(()=>{
+    localStorage.setItem("Tasks",JSON.stringify(taskList));
+  },[taskList])
+
+    // localStorage  get
+
+    // useEffect(()=>{
+    //     const storeitem=JSON.parse(localStorage.getItem("Tasks")) || [];
+    //     if (storeitem) {
+    //         setTaskList(storeitem) 
+    //     }
+    //   },[])
+
+
+    //   USED TO ADD
   function addTask() {
     setTaskList([...taskList, { id: taskIdCounter++, task: currentTask }]);
     // setTasklist("");
@@ -45,6 +61,10 @@ function FinalTodolist() {
     setCurrentTask("");
     setTaskid(null);
   }
+
+
+
+    
 
   const taskItems = taskList.map((taskItem) => (
     <div
@@ -106,4 +126,4 @@ function FinalTodolist() {
   );
 }
 
-export default FinalTodolist;
+export default TodoApp;
