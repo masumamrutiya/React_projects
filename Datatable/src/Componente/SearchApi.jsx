@@ -7,17 +7,17 @@ function SearchApi() {
   useEffect(() => {
 
                // API FETCH
-    async function fetchData() {
-      const Apidata = await fetch(`https://fakestoreapi.com/products`);
-      console.log(Apidata);
-      const data = await Apidata.json();
+    async function Datafetch() {
+      const Api = await fetch(`https://fakestoreapi.com/products`);
+      console.log(Api);
+      const data = await Api.json();
       console.log(data);
       setUsers(data);
     }
-    fetchData();
+    Datafetch();
   }, []);
                //SEARCH WITH FILTER FUNCTIONALITY
-  const searchingUser = users
+  const Usersearch = users
     .filter(({ category }) => {
       return category.indexOf(term) >= 0;
     })
@@ -70,7 +70,7 @@ function SearchApi() {
         {/* CARD CSS */}
         <div className="d-flex flex-wrap justify-content-between gap-4 mt-5">
           {" "}
-          {searchingUser}{" "}
+          {Usersearch}{" "}
         </div>
       </div>
 
