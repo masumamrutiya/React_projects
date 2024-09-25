@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "manav",
+      "email": "manav@gmail.com",
+      "password": "23",
+      "id": 1
+    },
+    {
+      "name": "kush",
+      "email": "kush@gmail.com",
+      "password": "120",
+      "id": 2
+    },
+    {
+      "name": "k",
+      "email": "k@gmail.com",
+      "password": "789",
+      "id": 3
+    },
+    {
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "456",
+      "id": 4
+    },
+    {
+      "name": "raghu",
+      "email": "sandiyaharsh@gamil.com",
+      "password": "6363",
+      "id": 5
+    }
+  ]
+}
