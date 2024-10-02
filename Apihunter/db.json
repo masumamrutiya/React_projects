@@ -29,6 +29,12 @@
       "email": "sandiyaharsh@gamil.com",
       "password": "6363",
       "id": 5
+    },
+    {
+      "name": "satya",
+      "email": "satya@gmail.com",
+      "password": "555",
+      "id": 6
     }
   ]
 }

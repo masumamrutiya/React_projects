@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'animate.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+// import logo from '../Assets/ms.png'
 
 function Signup() {
   const [data, setData] = useState({ name: "", email: "", password: "" });
@@ -84,6 +85,8 @@ function Signup() {
           </div>
         </div>
       </div>
+
+      {/* <img src={logo} alt="" srcset="" /> */}
 
     </>
   );

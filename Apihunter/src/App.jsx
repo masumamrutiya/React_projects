@@ -2,7 +2,7 @@ import { useState } from "react";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar";
 import Singup from "./Components/Singup";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import axios from "axios";
 
 function App() {
@@ -15,19 +15,6 @@ function App() {
     setIsLogin(!isLogin);
   };
 
-  const handleLogout = () => {
-    if (user) {
-      axios
-        .delete(`http://localhost:4040/api/${user.id}`)
-        .then(() => {
-          setUser(null);
-          setIsLogin(false);
-        })
-        .catch((error) => {
-          console.error(" remov  data:", error);
-        });
-    }
-  };
 
   const router = createBrowserRouter([
     {
@@ -35,7 +22,9 @@ function App() {
       element: (
         <>
           {" "}
-          <Navbar user={user} onLogout={handleLogout} />
+          <Navbar user={user}
+          //  onLogout={handleLogout}
+            />
         </>
       ),
     },
@@ -43,7 +32,8 @@ function App() {
       path: "/signup",
       element: (
         <>
-          <Navbar user={user} onLogout={handleLogout} />
+          <Navbar user={user}
+            />
           <Singup toggleLogin={toggleLogin} />{" "}
         </>
       ),
@@ -52,7 +42,8 @@ function App() {
       path: "/login",
       element: (
         <>
-          <Navbar user={user} onLogout={handleLogout} />{" "}
+          <Navbar user={user}
+           />{" "}
           <Login setUser={setUser} toggleLogin={toggleLogin} />{" "}
         </>
       ),
